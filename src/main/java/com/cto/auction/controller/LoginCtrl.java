@@ -10,12 +10,12 @@ import com.cto.auction.service.TestService;
 import com.cto.auction.vo.TestVO;
 
 @Controller
-public class TestCtrl {
+public class LoginCtrl {
 	@Autowired(required = false)
 	private TestService service;
 
-	@RequestMapping("/th")
-	public String testCtrlMethod(@ModelAttribute("testCtrlModelAttribute") TestVO sch, Model d) {
+	@RequestMapping("/login")
+	public String loginCtrlMethod(@ModelAttribute("testCtrlModelAttribute") TestVO sch, Model d) {
 		d.addAttribute("acHomeJSP", service.testSrvcMethod(sch));
 		return "testHome";
 	}

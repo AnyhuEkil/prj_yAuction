@@ -8,23 +8,35 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>♪TestHome</title>
+<title>♪LOGIN</title>
 <link rel="stylesheet" href="resources/css/test.css">
 <script src="http://code.jquery.com/jquery-3.2.1.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-		$(".yTr").dblclick(function() {
-			//alert();
-			//alert($(this).children().html());
-			var dcno = $(this).children().html();
-			$(location).attr("href", "gogo.not?dataNo=" + dcno);
-		});
 	});
 </script>
 </head>
 <body>
-	<br>
-	<div class="yMain">
+
+	<div class="yTr">로그인하세요</div>
+	<div class="yTr">
+		<div class="yTd">Email</div>
+		<div class="yTd"><input type="text" name="emailNoMean" value="${loginCtrlModelAttribute.email }" /> </div>
+		<div class="yTd">Password</div>
+		<div class="yTd"><input type="text" name="emailNoMean" value="${loginCtrlModelAttribute.password }" /></div>
+	</div>
+	
+	<div class="yTr">환영합니다</div>
+<%-- 	
+   USER_ID         NUMBER,
+   USER_NAME       VARCHAR2 (20),
+   EMAIL           VARCHAR2 (40),
+   PASSWORD        VARCHAR2 (20),
+   REGISTER_DATE   DATE,
+   AUTH            NUMBER,
+   USER_POINT      NUMBER
+
+		<div class="yMain">
 		<div class="yTitle">은행문제?</div>
 		<form method="post">
 			<div class="yTr">
@@ -45,6 +57,6 @@
 				<div class="yTd yW20">${acListJspOnly.dataDate}</div>
 			</div>
 		</c:forEach>
-	</div>
+	</div> --%>
 </body>
 </html>

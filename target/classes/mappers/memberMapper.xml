@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+
+<mapper namespace="member">
+	<select id="memberList" resultType="com.cto.auction.vo.MemberVO">
+		SELECT
+		USER_ID AS userId,
+		USER_NAME AS userName,
+		EMAIL AS userEmail,
+		PASSWORD AS password,
+		REGISTER_DATE AS registerDate,
+		AUTH,
+		USER_POINT AS userPoint
+		FROM
+		AUCTION_USER
+		ORDER BY userId
+	</select>
+	<!-- 02. 회원 등록 -->
+	<insert id="insertMember">
+		INSERT INTO AUCTION_USER
+		(EMAIL, PASSWORD, USER_NAME, USER_ID)
+		VALUES
+		(#{userEmail}, #{password}, #{userName}, #{userId})
+	</insert>
+</mapper>
