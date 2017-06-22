@@ -14,34 +14,35 @@ import com.cto.auction.vo.MemberVO;
 public class MemberServiceImpl implements MemberService {
 
 	// MemberDAOImpl 객체를 스프링에서 생성하여 주입시킴
-	@Inject
-	MemberDAOImpl memberDao;
-
-	// 01. 회원 목록
-	@Override
-	public List<MemberVO> memberList() {
-		return memberDao.memberList();
-	}
-
-	// 02. 회원 등록
-	@Override
-	public void insertMember(MemberVO vo) {
-		memberDao.insertMember(vo);
-	}
-
-	@Override
-	public MemberVO viewMember() {
-		return null;
-	}
-
-	@Override
-	public void deleteMember(String userId) {
-
-	}
-
-	@Override
-	public void updateMember(MemberVO vo) {
-
-	}
-
+    @Inject
+    MemberDAOImpl memberDao;
+    
+    // 01. 회원 목록
+    @Override
+    public List<MemberVO> memberList() {
+        return memberDao.memberList();
+    }
+    
+    // 02. 회원 등록
+    @Override
+    public void insertMember(MemberVO vo) {
+        memberDao.insertMember(vo);
+    }
+ 
+    // 03. 회원 정보 상세 조회 
+    @Override
+    public MemberVO viewMember(String userId) {
+        return memberDao.viewMember(userId);
+    }
+ 
+    @Override
+    public void deleteMember(String userId) {
+        
+    }
+ 
+    @Override
+    public void updateMember(MemberVO vo) {
+        
+    }
+ 
 }

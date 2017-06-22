@@ -20,8 +20,20 @@
 	<!-- 02. 회원 등록 -->
 	<insert id="insertMember">
 		INSERT INTO AUCTION_USER
-		(EMAIL, PASSWORD, USER_NAME, USER_ID)
+		(EMAIL, PASSWORD, USER_NAME,
+		USER_ID)
 		VALUES
 		(#{userEmail}, #{password}, #{userName}, #{userId})
 	</insert>
+	<!-- 03. 회원정보 상세조회 -->
+	<select id="viewMember" resultType="com.cto.auction.vo.MemberVO">
+		SELECT
+		USER_ID AS userId,
+		USER_NAME AS userName,
+		EMAIL AS userEmail,
+		REGISTER_DATE AS registerDate,
+		USER_POINT AS userPoint
+		FROM AUCTION_USER
+		WHERE USER_ID = #{userId}
+	</select>
 </mapper>
